@@ -11,7 +11,9 @@ Setup_Depedencies() {
 Setup_Docker() {
     printf "\n---> INSTALL DOCKER <---\n"
     sudo apt install docker -y
-    sudo service docker start
+    sudo systemctl start docker
+    sudo systemctl enable docker
+    docker --version
 }
 
 Setup_Docker_Compose() {
