@@ -4,13 +4,13 @@ set -eu
 
 Setup_Depedencies() {
     printf "\n---> INSTALL DEPENDENCIES <---\n"
-    sudo yum update -y
-    sudo yum install -y git curl
+    sudo apt update
+    # sudo yum install -y git curl
 }
 
 Setup_Docker() {
     printf "\n---> INSTALL DOCKER <---\n"
-    sudo amazon-linux-extras install -y docker
+    sudo apt install docker -y
     sudo service docker start
 }
 
