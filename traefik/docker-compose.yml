@@ -1,12 +1,15 @@
-version: '2.3'
+version: '3'
 
 services:
   traefik:
-    image: traefik:1.7
+    image: traefik:v2.8
+    command: --api.insecure=true --providers.docker
     restart: always
     ports:
       - 80:80
       - 443:443
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
     networks:
       - traefik
     volumes:
